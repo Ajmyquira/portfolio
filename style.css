@@ -1,121 +1,149 @@
+:root{
+    --black: #181818;
+    --lightBlack: #303030;
+    --white: #d5d5d5;
+    --lightPurple: #8863d6;
+}
+
 *{
-    margin: 0;
-    padding: 0;
     font-family: 'Andale Mono', monospace;
+    margin: 0; padding: 0;
     box-sizing: border-box;
-    
+    /* outline: none; */
+    /* border: none; */
+    text-decoration: none;
+    transition: .2s linear;
 }
 html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: #181818;
-    color: #d5d5d5;
-    font-size: 20px;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 18px;
 }
 
-/* ----------- Header ----------- */
+/* Header section*/
 
-#header{
-    width: 100%;
-    height: 100vh;
-    background-image: url(images/header-background.jpg);
-    background-size: cover;
-    background-position: bottom;
-    color: #fff;
-}
-.container{
-    padding: 20px 10%;
-}
-nav{
+.header{
+    top: 0; right: 0; left: 0;
+    background-color: var(--black);
     display: flex; /* Set the nav element as a flex container */
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Flex items can wrap onto multiples lines */
+    position: fixed;
+    padding: 10px 5%;
+    z-index: 999;
+    font-size: 20px;
 }
-nav h1{
-    font-size: 50px;
-    color:#8863d6;
+.header .logoContent{
+    color: var(--lightPurple);
+    font-size: 25px;
 }
-nav ul li{
-    display: inline-block; 
-    list-style: none;
-    margin: 10px 20px;
-}
-nav ul li a{
-    color: #fff; /* The <a> has a color by default */
-    text-decoration: none;
+.header .navbar a{
+    margin: 0 20px;
+    color: var(--white);
     position: relative;
 }
-nav ul li a::after{
+.header .navbar a::after{
     content: '';
     width: 0;
-    height: 3px;
-    background-color: #9f74fd;
+    height: 2px;
+    background-color: var(--lightPurple);
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -5px;
     transition: 0.5s;
 }
-nav ul li a:hover::after{
+.header .navbar a:hover::after{
     width: 100%;
 }
-.header-text{
-    margin-top: 15%; /* The percent of the width of the generated box's containing block */ 
-    font-size: 40px;
+.header .icon i{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.header .icon{
+    display: none;
+}
+
+/* Section */
+
+section{
+    padding: 40px 4%;
+}
+
+/* Home section */
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(images/header-background.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.homeContent{
     text-align: center;
+    padding: 20px 5%;
+}
+.homeContent h1{
+    font-size: 80px;
+}
+.homeContent p{
+    margin-top: 20px;
+    font-size: 35px;
 }
 
-/* ----------- About ----------- */
+/* Heading */
 
-#about{
-    padding: 40px 0;
+.heading{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: var(--lightPurple);
 }
-.row{
+
+/* About section */
+
+.aboutContent{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.about-col-1{
+.aboutContent .aboutCol1{
     flex-basis: 20%; /* Set the initial length of a flex item */
 }
-.about-col-1 img{
+.aboutContent .aboutCol1 img{
     width: 100%;
     border-radius: 15px;
 }
-.about-col-2{
-    flex-basis: 70%;
+.aboutContent .aboutCol2{
+    flex-basis: 75%;
 }
-.sub-title{
-    font-size: 50px;
-    color:#9f74fd;
-}
-.about-col-2 p{
-    margin-top: 30px;
+.aboutContent .aboutCol2 .textContent{
+    padding: 0 3%;
 }
 
-/* Expertise */
+/* Expertise section*/
 
-#expertise{
-    padding: 30px 0;   
-}
-.expertise-list{
+.experList{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.expertise-list div{
-    background: #303030;
+.experList .exper{
+    background: var(--lightBlack);
     padding: 40px;
     border-radius: 10px;
     /* transition: background-color 0.5s, transform 0.5s; */
 }
-.expertise-list div i{
-    font-size: 40px;
-    margin-bottom: 30px;
+.experList .exper i{
+    font-size: 35px;
+    margin-bottom: 25px;
 }
-.expertise-list div h2{
+.experList .exper h2{
     margin-bottom: 15px;
 }
 /*.expertise-list div a{
@@ -129,12 +157,9 @@ nav ul li a:hover::after{
     transform: translateY(-10px);
 } */
 
-/* Projects */
+/* Projects section */
 
-#projects{
-    padding: 40px 0;
-}
-.work-list{
+.workList{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
@@ -201,48 +226,59 @@ nav ul li a:hover::after{
     background:#5e3e94;
 } */
 
-/* Contact */
+/* Footer section */
 
-#contact{
-    padding: 0 0 50px;
+.footer{
+    background: url(images/footer-background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
-.contact-block{
+.contactContent{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 30px 4% 20px;
 }
-.information{
-    padding: 20px 0;
+.contactContent h2{
+    font-size: 35px;
+    color: var(--lightPurple);
+    margin-bottom: 10px;
+}
+.info{
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.information i{
-    color:#8863d6;
+.info i{
+    color:var(--white);
     font-size: 25px;
     margin-bottom: 10px;
 }
 
-.social-icons{
-    margin-top: 20px;
+.share{
+    padding: 20px 3%;
+    text-align: center;
 }
-.social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color:#d0d0d0;
-    display: inline-block;
+.share a{
+    height: 50px; width: 50px;
+    font-size: 40px;
+    color: var(--lightPurple);
+    /* margin: 0 10px; */
     transition: transform 0.5s;
+    display: inline-block;
 
 }
-.social-icons a:hover{
-    color:#8863d6;
+.share a:hover{
+    color:var(--white);
     transform: translateY(-5px);
 }
 
-nav .fa-solid{
-    display: none;
+.credit{
+    font-size: 15px;
+    padding: 10px 3% 5px;
+    text-align: center;
 }
 
 /* Css for small screens */
