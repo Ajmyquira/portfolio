@@ -3,6 +3,8 @@
     --lightBlack: #303030;
     --white: #d5d5d5;
     --lightPurple: #8863d6;
+    --darkPurpleT: #4f347ddc;
+    --darkPurple: #5e3e94;
 }
 
 *{
@@ -40,12 +42,16 @@ body{
     color: var(--lightPurple);
     font-size: 25px;
 }
-.header .navbar a{
+.navbar ul li{
+    display: inline-block;
+    list-style: none;
     margin: 0 20px;
+}
+.navbar ul li a{
     color: var(--white);
     position: relative;
 }
-.header .navbar a::after{
+.navbar ul li a::after{
     content: '';
     width: 0;
     height: 2px;
@@ -55,12 +61,12 @@ body{
     bottom: -5px;
     transition: 0.5s;
 }
-.header .navbar a:hover::after{
+.navbar ul li a:hover::after{
     width: 100%;
 }
 .header .icon i{
-    margin-right: 20px;
     cursor: pointer;
+    font-size: 20px;
 }
 .header .icon{
     display: none;
@@ -131,7 +137,6 @@ section{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
-    margin-top: 50px;
 }
 .experList .exper{
     background: var(--lightBlack);
@@ -163,7 +168,6 @@ section{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    margin-top: 50px;
 }
 .work{
     border-radius: 10px;
@@ -178,8 +182,7 @@ section{
 .layer{
     width: 100%;
     height: 0;
-    background-color:#4f347ddc;
-    /* border-radius: 15px; */
+    background-color: var(--darkPurpleT);
     position: absolute; /* Absolute to .work element */
     left: 0;
     top: 0;
@@ -198,7 +201,7 @@ section{
 }
 .layer a{
     margin-top: 20px;
-    color:#5e3e94;
+    color: var(--darkPurple);
     line-height: 50px;
     background-color:#d0d0d0;
     width: 50px;
@@ -265,7 +268,6 @@ section{
     height: 50px; width: 50px;
     font-size: 40px;
     color: var(--lightPurple);
-    /* margin: 0 10px; */
     transition: transform 0.5s;
     display: inline-block;
 
@@ -283,73 +285,72 @@ section{
 
 /* Css for small screens */
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 900px){
+    .header{
+        font-size: 17px;
+    }
+    .header .logoContent{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px){
     body{
         font-size: 15px;
     }
-    nav .fa-solid{
-        display: block;
-        font-size: 25px;
-    }
-    nav ul{
-        background:#4f347ddc;
-        position: fixed;
-        top: 0;
-        right: -125px;
-        width: 125px;
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 140px;
         height: 100vh;
-        padding-top: 40px;
-        z-index: 2;
+        background-color: var(--black);
+        padding: 10px;
         transition: right 0.5s;
     }
-    nav ul li{
+    .header .navbar.active{
+        right: 0;
+    }
+    .navbar ul li{
         display: block;
-        margin: 25px;
+        margin: 15px;
     }
-    nav ul .fa-solid{
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
-    .header-text{
-        margin-top: 15%;
-        font-size: 30px;
+    .header .icon{
+        display: inline-block;
     }
 
     /* About */
 
-    .sub-title{
+    /* .sub-title{
         font-size: 40px;
-    }
+    } */
 
     /* Expertise */
 
-    .expertise-list{
+    /* .expertise-list{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+    } */
 
     /* Projects */
 
-    .work-list{
+    /* .work-list{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+    } */
 }
 
-@media only screen and (max-width: 400px){
-    /* Header */
+@media only screen and (max-width: 480px){
     
-    #header{
+    /* #header{
         background-image: url(images/phone-header-background.jpg);
     }
     .header-text{
         margin-top: 60%;
         font-size: 20px;
-    }
+    } */
     
     /* About */
 
-    .sub-title{
+    /* .sub-title{
         font-size: 30px;
     }
     .about-col-1, .about-col-2{
@@ -357,11 +358,26 @@ section{
     }
     .about-col-1{
         margin-bottom: 30px;
-    }
+    } */
 
     /* Projects */
 
-    .layer h3{
+    /* .layer h3{
         font-size: 25px;
+    } */
+}
+
+@media only screen and (max-width: 350px){
+    body{
+        font-size: 10px;
+    }
+    .header{
+        font-size: 13px;
+    }
+    .navbar{
+        width: 105px;
+    }
+    .navbar ul li{
+        margin: 10px;
     }
 }
