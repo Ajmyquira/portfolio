@@ -75,7 +75,7 @@ body{
 /* Section */
 
 section{
-    padding: 40px 4%;
+    padding: 40px 5%;
 }
 
 /* Home section */
@@ -116,16 +116,18 @@ section{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
 }
 .aboutContent .aboutCol1{
-    flex-basis: 20%; /* Set the initial length of a flex item */
+    flex-basis: 25%; /* Set the initial length of a flex item */
 }
 .aboutContent .aboutCol1 img{
     width: 100%;
     border-radius: 15px;
 }
 .aboutContent .aboutCol2{
-    flex-basis: 75%;
+    flex-basis: 70%;
+    text-align: justify;
 }
 .aboutContent .aboutCol2 .textContent{
     padding: 0 3%;
@@ -286,18 +288,30 @@ section{
 /* Css for small screens */
 
 @media only screen and (max-width: 900px){
+    body{
+        font-size: 15px;
+    }
+
+    /* Header section */
+
     .header{
         font-size: 17px;
     }
     .header .logoContent{
         font-size: 20px;
     }
+
+    /* Heading */
+
+    .heading{
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
 }
 
 @media only screen and (max-width: 768px){
-    body{
-        font-size: 15px;
-    }
+    /* Header section */
+
     .navbar{
         position: absolute;
         top: 100%;
@@ -319,11 +333,40 @@ section{
         display: inline-block;
     }
 
+    /* Home section */
+
+    .home{
+        background: url(images/phone-header-background.jpg);
+        background-position: center center;
+    }
+    .homeContent h1{
+        font-size: 60px;
+    }
+    .homeContent p{
+        font-size: 25px;
+    }
+    
+    /* Heading */
+
+    .heading{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    /* Section */
+
+    section{
+        padding: 30px 5%;
+    }
+
     /* About */
 
-    /* .sub-title{
-        font-size: 40px;
-    } */
+    .aboutContent{
+        flex-direction: column;
+    }
+    .aboutContent .aboutCol1{
+        margin-bottom: 30px;
+    }
 
     /* Expertise */
 
@@ -338,27 +381,39 @@ section{
     } */
 }
 
-@media only screen and (max-width: 480px){
-    
-    /* #header{
-        background-image: url(images/phone-header-background.jpg);
-    }
-    .header-text{
-        margin-top: 60%;
-        font-size: 20px;
-    } */
-    
-    /* About */
+/* Mobile */
 
-    /* .sub-title{
-        font-size: 30px;
+@media only screen and (max-width: 480px){
+    /* Header section */
+
+    .header{
+        font-size: 15px;
     }
-    .about-col-1, .about-col-2{
+    .navbar{
+        width: 120px;
+    }
+    .navbar ul li{
+        margin: 10px;
+    }
+    
+    /* Home section */
+
+    .homeContent h1{
+        font-size: 45px;
+    }
+    .homeContent p{
+        font-size: 18px;
+    }
+
+    /* About section */
+
+    .aboutContent .aboutCol1{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .aboutContent .aboutCol2{
         flex-basis: 100%;
     }
-    .about-col-1{
-        margin-bottom: 30px;
-    } */
 
     /* Projects */
 
@@ -369,15 +424,34 @@ section{
 
 @media only screen and (max-width: 350px){
     body{
-        font-size: 10px;
+        font-size: 13px;
     }
+
+    /* Header section */
+
     .header{
         font-size: 13px;
     }
     .navbar{
-        width: 105px;
+        width: 100px;
     }
     .navbar ul li{
-        margin: 10px;
+        margin: 8px;
+    }
+
+    /* Home section */
+
+    .homeContent h1{
+        font-size: 40px;
+    }
+    .homeContent p{
+        font-size: 15px;
+    }
+
+    /* Heading */
+
+    .heading{
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 }
