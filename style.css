@@ -75,7 +75,7 @@ body{
 /* Section */
 
 section{
-    padding: 40px 5%;
+    padding: 40px 5% 20px;
 }
 
 /* Home section */
@@ -153,6 +153,9 @@ section{
 .experList .exper h2{
     margin-bottom: 15px;
 }
+.experList .exper p{
+    text-align: justify;
+}
 /*.expertise-list div a{
     margin-top: 20px;
     color:#d0d0d0;
@@ -193,13 +196,13 @@ section{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 25px;
     text-align: center;
     transition: height 0.5s;
 }
-.layer h3{
-    font-size: 30px;
-    margin-bottom: 20px;
+.layer h2{
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 .layer a{
     margin-top: 20px;
@@ -237,6 +240,7 @@ section{
     background: url(images/footer-background.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
+    margin-top: 40px;
 }
 .contactContent{
     display: flex;
@@ -307,6 +311,12 @@ section{
         font-size: 30px;
         margin-bottom: 25px;
     }
+
+    /* Expertise */
+
+    .experList .exper i{
+        font-size: 25px;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -356,7 +366,7 @@ section{
     /* Section */
 
     section{
-        padding: 30px 5%;
+        padding: 30px 5% 15px;
     }
 
     /* About */
@@ -367,18 +377,6 @@ section{
     .aboutContent .aboutCol1{
         margin-bottom: 30px;
     }
-
-    /* Expertise */
-
-    /* .expertise-list{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    } */
-
-    /* Projects */
-
-    /* .work-list{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    } */
 }
 
 /* Mobile */
@@ -415,11 +413,29 @@ section{
         flex-basis: 100%;
     }
 
+    /* Expertise */
+
+    .experList{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+    }
+    .experList .exper{
+        padding: 30px;
+    }
+    .experList .exper i{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
     /* Projects */
 
-    /* .layer h3{
-        font-size: 25px;
-    } */
+    .workList{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+    }
+    .layer h2{
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 350px){
@@ -452,6 +468,6 @@ section{
 
     .heading{
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 }
