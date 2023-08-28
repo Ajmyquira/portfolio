@@ -1,5 +1,6 @@
 :root{
     --black: #181818;
+    --blackT: #181818da;
     --lightBlack: #303030;
     --white: #d5d5d5;
     --lightPurple: #8863d6;
@@ -17,6 +18,7 @@
     transition: .2s linear;
 }
 html{
+    scroll-padding-top: 40px;
     scroll-behavior: smooth;
 }
 body{
@@ -247,12 +249,12 @@ section{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 30px 4% 20px;
+    padding: 30px 3% 20px;
 }
 .contactContent h2{
     font-size: 35px;
     color: var(--lightPurple);
-    margin-bottom: 10px;
+    margin: 20px 0 10px;
 }
 .info{
     padding: 10px 0;
@@ -265,7 +267,6 @@ section{
     font-size: 25px;
     margin-bottom: 10px;
 }
-
 .share{
     padding: 20px 3%;
     text-align: center;
@@ -276,13 +277,11 @@ section{
     color: var(--lightPurple);
     transition: transform 0.5s;
     display: inline-block;
-
 }
 .share a:hover{
     color:var(--white);
     transform: translateY(-5px);
 }
-
 .credit{
     font-size: 15px;
     padding: 10px 3% 5px;
@@ -328,7 +327,7 @@ section{
         right: -100%;
         width: 140px;
         height: 100vh;
-        background-color: var(--black);
+        background-color: var(--blackT);
         padding: 10px;
         transition: right 0.5s;
     }
@@ -436,6 +435,12 @@ section{
     .layer h2{
         font-size: 20px;
     }
+
+    /* Contact */
+    
+    .credit{
+        font-size: 10px;
+    }
 }
 
 @media only screen and (max-width: 350px){
@@ -469,5 +474,22 @@ section{
     .heading{
         font-size: 20px;
         margin-bottom: 15px;
+    }
+
+    /* Contact */
+
+    .contactContent h2{
+        font-size: 30px;
+    }
+    .info i{
+        font-size: 20px;
+    }
+    .share a{
+        height: 40px; width: 40px;
+        font-size: 30px;
+    }
+    .credit{
+        font-size: 8px;
+        padding: 5px 3% 5px;
     }
 }
